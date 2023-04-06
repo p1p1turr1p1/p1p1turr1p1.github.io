@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navegacion">
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+
+            <li><a href="#">Catalogo</a>
+              <ul class="submenu">
+                <li><a href="Muñequeras.html">Muñequeras</a></li>
+                <li><a href="Rodilleras.html">Rodilleras</a></li>
+                <li><a href="Cinturon.html">Cinturon </a></li>
+              </ul>
+            </li>
+            <li><a href="Contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+     
+    
+    <ol class="flex-control-nav flex-control-thumbs"><li><img src="imagenes html/rodilleras.jpeg" class="flex-active" draggable="false"></li><li><img src="" draggable="false"></li><li><img src="" draggable="false"></li><li><img src="" draggable="false"></li><li><img src="" draggable="false"></li></ol>
+    <h1 class="product_title entry-title">Muñequeras</h1>
+    <label for="pa_size">Size</label>
+    <select id="pa_size" class="" name="attribute_pa_size" data-attribute_name="attribute_pa_size" data-show_option_none="yes"><option value="">Elige una opción</option><option value="xs" class="attached enabled">XS</option><option value="s" class="attached enabled">S</option><option value="m" class="attached enabled">M</option><option value="l" class="attached enabled">L</option><option value="xl" class="attached enabled">XL</option><option value="2xl" class="attached enabled">2XL</option><option value="3xl" class="attached enabled">3XL</option><option value="4xl" class="attached enabled">4XL</option><option value="5xl" class="attached enabled">5XL</option></select>
+    <div class="logo">
+  
+      <div class="quantity custom">
+      <label class="screen-reader-text" for="quantity_642cb4d8188fe">Cantidad</label>
+      <a href="#" class="minus-btn">
+          <i class="spk-icon spk-icon-minus"></i>
+      </a>
+      <input type="number" id="quantity_642cb4d8188fe" class="input-text custom-qty qty text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" step="1" min="1" max="" name="quantity" value="1" title="Cantidad" size="4" inputmode="numeric" placeholder="" aria-labelledby="Cinturón Lever 13mm cantidad">
+                      <a href="#" class="plus-btn">
+          <i class="spk-icon spk-icon-plus"></i>
+      </a>
+  </div>
+
+<button type="submit" class="single_add_to_cart_button button alt wp-element-button disabled wc-variation-selection-needed">Añadir al carrito</button>
+
+
+<input type="hidden" name="add-to-cart" value="162">
+<input type="hidden" name="product_id" value="162">
+<input type="hidden" name="variation_id" class="variation_id" value="0">
+  
+    
+</body>
+</html>
