@@ -213,20 +213,82 @@
     </div>
   </div>
    
-
-  <head>
-    <title>Mostrar dirección de tienda con Google Maps</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      #map {
-        height: 400px;
-        width: 100%;
-      }
-    </style>
-  </head>
-
-
+	<div class="container">
+		<h1 class="my-4">Reseñas ⭐</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Opinión</th>
+					<th></th>
+					<th>Usuario</th>
+					<th>Fecha</th>
+				</tr>
+			</thead>
+			<tbody id="post-table-body">
+			</tbody>
+		</table>
+	</div>
+	<script>
+		fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_limit=3')
+			.then(response => response.json())
+			.then(data => {
+				const postTableBody = document.getElementById('post-table-body');
+				for(let i=0; i<4; i++) {
+					const post = data[i];
+					const tr = document.createElement('tr');
+					const tdTitle = document.createElement('td');
+					const tdBody = document.createElement('td');
+					const tdUser = document.createElement('td');
+					const tdDate = document.createElement('td');
+					tdTitle.textContent = post.title;
+					tdBody.textContent = post.body;
+					fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
+						.then(response => response.json())
+						.then(user => {
+							tdUser.textContent = user.name;
+						});
+					tdDate.textContent = post.date;
+					tr.appendChild(tdTitle);
+					tr.appendChild(tdBody);
+					tr.appendChild(tdUser);
+					tr.appendChild(tdDate);
+					postTableBody.appendChild(tr);
+				}
+			});
+	</script>
+  <script>
+		fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_limit=3')
+			.then(response => response.json())
+			.then(data => {
+				const postTableBody = document.getElementById('post-table-body');
+				data.forEach(post => {
+					const tr = document.createElement('tr');
+					const tdTitle = document.createElement('td');
+					const tdBody = document.createElement('td');
+					const tdUser = document.createElement('td');
+					const tdDate = document.createElement('td');
+					const tdCategory = document.createElement('td');
+					const tdComments = document.createElement('td');
+					tdTitle.textContent = post.title;
+					tdBody.textContent = post.body;
+					fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
+						.then(response => response.json())
+						.then(user => {
+							tdUser.textContent = user.name;
+						});
+					tdDate.textContent = post.date;
+					tdCategory.textContent = post.category;
+					tdComments.textContent = post.comments;
+					tr.appendChild(tdTitle);
+					tr.appendChild(tdBody);
+					tr.appendChild(tdUser);
+					tr.appendChild(tdDate);
+					tr.appendChild(tdCategory);
+					tr.appendChild(tdComments);
+					postTableBody.appendChild(tr);
+				});
+			});
+	</script>
 </body>
 
 </html>
